@@ -1,0 +1,45 @@
+/*$mainAccent: #f23e3e;*/
+.main_banner {
+  width: 100%;
+  height: 700px;
+  background: #3949AB no-repeat center center;
+  background-size: cover; }
+  .main_banner .container {
+    padding: 150px 0px 230px 0px; }
+  .main_banner .container h2 {
+    color: #FFF; }
+
+.learn_more {
+  height: 35px;
+  width: 120px;
+  margin-top: 22.5px;
+  border: 2px solid #FFF;
+  border-radius: 20px;
+  color: #3949AB;
+  outline: none;
+  font-family: "Helvetica Neue Bold", sans-serif;
+  background: #FFF;
+  text-transform: uppercase;
+  font-size: 11px;
+  line-height: 28px;
+  cursor: pointer;
+  -webkit-transition: background 0.3s, color 0.3s;
+  -moz-transition: background 0.3s, color 0.3s;
+  -o-transition: background 0.3s, color 0.3s;
+  -ms-transition: background 0.3s, color 0.3s;
+  transition: background 0.3s, color 0.3s; }
+
+/*
+.learn_more:hover {
+	background: #FFF;
+	color: $lightAccent;
+}
+
+@media only screen and (max-width: $breakMedium) {
+	.main_banner .container .col-md-6 {
+		margin-top: 100px;
+	}
+}
+*/
+
+/*# sourceMappingURL=home.css.map */

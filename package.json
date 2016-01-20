@@ -1,0 +1,32 @@
+{
+  "name": "howacomputerworks",
+  "version": "0.1.0",
+  "description": "Creating a website to teach users about the functionality of different parts of a computer in an interactive way.",
+  "author": "Sahibjot Saggu <sahibjot@live.ca>",
+  "contributors": [
+    {
+      "name": "Neeraj Aggarwal",
+      "email": "aggarwal.neeraj141@gmail.com"
+    }
+  ],
+  "start": "npm start",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sahibjotsaggu/howacomputerworks.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sahibjotsaggu/howacomputerworks/issues"
+  },
+  "dependencies": {
+    "angular-route": "^1.4.8",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.14.2",
+    "express": "^4.13.3",
+    "jsonwebtoken": "^5.4.1",
+    "mongodb": "^2.1.2",
+    "mongoose": "^4.3.4",
+    "morgan": "^1.6.1"
+  },
+  "license": "BSD"
+}
