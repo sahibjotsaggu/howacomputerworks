@@ -86,9 +86,9 @@ Open git bash or cygwin:
 Go to [localhost:8030](http://localhost:8030)
 
 ## Things To Do for “How A Computer Works” Project (Timeline)
-1. Make Logo (Finish by January 30, 2016) [Incomplete]
-2. Finish landing page graphic (Finish by January 10, 2016) [Incomplete]
-3. Finish Graphics for major components (Finish by January 17, 2016) [Incomplete]
+1. Make Logo (Finish by January 30, 2016) **Extended to May 7, 2016** [Incomplete]
+2. Finish landing page graphic (Finish by January 10, 2016) **Extended to May 7, 2016** [Incomplete]
+3. Finish Graphics for major components (Finish by January 17, 2016) **Extended to May 21, 2016** [Incomplete]
 
 ## Completed Tasks 
 1. Finish landing page layout (Finished January 2, 2016) [Complete]
