@@ -2,27 +2,27 @@
 
 @font-face {
 	font-family: 'Helvetica Neue';
-	src: url('../fonts/Helvetica Neue/HelveticaNeue.otf');
+	src: url('../fonts/HelveticaNeue.otf');
 }
 
 @font-face {
 	font-family: 'Helvetica Neue Bold';
-	src: url('../fonts/Helvetica Neue/HelveticaNeue-Bold.otf');
+	src: url('../fonts/HelveticaNeue-Bold.otf');
 }
 
 @font-face {
 	font-family: 'Helvetica Neue Medium';
-	src: url('../fonts/Helvetica Neue/HelveticaNeue-Medium.otf');
+	src: url('../fonts/HelveticaNeue-Medium.otf');
 }
 
 @font-face {
 	font-family: 'Helvetica Neue Light';
-	src: url('../fonts/Helvetica Neue/HelveticaNeue-Light.otf');
+	src: url('../fonts/HelveticaNeue-Light.otf');
 }
 
 @font-face {
 	font-family: 'Helvetica Neue Light2';
-	src: url('../fonts/Helvetica Neue/HelveticaNeue-UltraLight.otf');
+	src: url('../fonts/HelveticaNeue-UltraLight.otf');
 }
 
 $fontNormal: 'Helvetica Neue', sans-serif;
@@ -36,10 +36,13 @@ $darkAccent: #303F9F;
 $breakSmall: 768px;
 $breakMedium: 992px;
 
+$dd_nav_height: 40px;
+
 body {
 	font-family: $fontNormal;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	margin: 0px;
 }
 
 h1 {
@@ -126,6 +129,10 @@ ul {
 	}
 }
 
+.main_title {
+	padding-left: 40px;
+}
+
 .dropdown_nav {
 	background: #FFF;
 }
@@ -180,8 +187,6 @@ ul {
 	color: #FFF;
 }
 
-$dd_nav_height: 40px;
-
 .dd_content {
 	position: absolute;
 	top: 80px;
@@ -229,8 +234,8 @@ $dd_nav_height: 40px;
 	height: $dd_nav_height;
 	border: 0px;
 	outline: none;
-	padding: 5px 20px 5px 20px;
-	border-radius: 20px;
+	padding: 0px;
+	border-radius: $dd_nav_height / 2;
 	font-size: 11.5px;
 	font-family: $fontBold;
 	background: #FFF;

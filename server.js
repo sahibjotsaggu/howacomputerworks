@@ -45,7 +45,7 @@ app.use('/api', apiRoutes);
 
 // send user to main page
 app.get('*', function(req, res) {
-	res.sendFile(path.join(__dirname + '/public/app/views/index.html'));
+	res.sendFile(path.join(__dirname + '/public/dist/app/views/index.html'));
 });
 
 // START SERVER
