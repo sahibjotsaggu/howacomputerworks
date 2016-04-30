@@ -37,7 +37,7 @@ gulp.task('styles', function() {
 gulp.task('scripts', function() {
 	return gulp.src(paths.scripts)
 	.pipe(jshint('.jshintrc'))
-	.pipe(jshint.reporter('default'))
+	.pipe(jshint.reporter('jshint-stylish'))
 	.pipe(gulp.dest('public/dist/app/javascript'))
 	.pipe(rename({suffix: '.min'}))
 	.pipe(uglify())
