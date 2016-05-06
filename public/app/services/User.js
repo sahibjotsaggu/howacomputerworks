@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular.module('UserService', [])
-	.factory('User', User);
+	.factory(User);
 
 	User.$inject = ['$http'];
 
@@ -12,11 +12,11 @@
 			get: get,
 			create: create,
 			update: update,
-			delete: delete
+			Delete: Delete
 		};
 
 		function all() {
-			return $http.get('/api/users/')
+			return $http.get('/api/users/');
 		}
 
 		function get(id) {
@@ -31,8 +31,8 @@
 			return $http.put('/api/users/' + id, userData);
 		}
 
-		function delete(id) {
-			return $http.delete('/api/users/' + id);
+		function Delete(id) {
+			return $http.Delete('/api/users/' + id);
 		}	
 	}
 

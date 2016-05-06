@@ -1,59 +1,70 @@
-angular.module('AuthService', [])
-// ===================================================
-// auth factory to login and get information
-// inject $http for communicating with the API
-// inject $q to return promise objects
-// inject AuthToken to manage tokens
-// ===================================================
+(function() {
+	'use strict';
 
-.factory('Auth', function($http, $q, AuthToken) {
-	var authFactory = {};
-	authFactory.createSampleUser = function() {
-		$http.post('/api/sample');
-	};
-	return authFactory;
-})
+	angular.module('AuthService', [])
+	.factory('Auth', Auth)
+	.factory('AuthToken', AuthToken)
+	.factory('AuthInterceptor', AuthInterceptor);
 
-// ===================================================
-// factory for handling tokens
-// inject $window to store token client-side
-// ===================================================
+	Auth.$inject = ['$http', '$q', 'AuthToken'];
+	AuthToken.$inject = ['$window'];
+	AuthInterceptor.$inject = ['$q', '$location', 'AuthToken'];
 
-.factory('AuthToken', function($window) {
-	var authTokenFactory = {};
-	authTokenFactory.getToken = function() {
-		return $window.localStorage.getItem('token');
-	};
-	authTokenFactory.setToken = function(token) {
-		if (token) {
-			$window.localStorage.setItem('token', token);
+	function Auth($http, $q, AuthToken) {
+		var service = {
+			createSampleUser: createSampleUser
+		};
+
+		return service;
+
+		function createSampleUser() {
+			$http.post('/api/sample');
 		}
-		else {
-			$window.localStorage.removeItem('token');
-		}
-	};
-	return authTokenFactory;
-})
+	}
 
-// ===================================================
-// application configuration to integrate token into requests
-// ===================================================
-.factory('AuthInterceptor', function($q, $location, AuthToken) {
-	var interceptorFactory = {};
-	interceptorFactory.request = function(config) {
-		var token = AuthToken.getToken();
-		if (token) {
-			config.headers['x-access-token'] = token;
-		}
-		return config;
-	};
+	function AuthToken($window) {
+		var service = {
+			getToken: getToken,
+			setToken: setToken
+		};
 
-	interceptorFactory.responseError = function(response) {
-		if (response.status == 403) {
-			AuthToken.setToken();
-			$location.path('/login');
+		return service;
+
+		function getToken() {
+			return $window.localStorage.getItem('token');
 		}
-		return $q.reject(response);
-	};
-	return interceptorFactory;
-});
+
+		function setToken(token) {
+			return $window.localStorage.setItem('token', token);
+		}
+	}
+
+	function AuthInterceptor($q, $location, AuthToken) {
+		var service = {
+			request: request,
+			responseError: responseError
+		};
+
+		return service;
+
+		function request(config) {
+			var token = AuthToken.getToken();
+
+			if (token) {
+				config.headers['x-access-token'] = token;
+			}
+
+			return config;
+		}
+
+		function responseError(response) {
+			if (response.status === 403) {
+				AuthToken.setToken();
+				$location.path('/home');
+			}
+
+			return $q.reject(response);
+		}
+	}
+
+}());

@@ -1,8 +1,18 @@
-angular.module('hacw', ['app.routes', 'ui.filters', 'AuthService', 'MainCtrl', 'SearchCtrl', 'searchService', 'userService'])
-// APPLICATION CONFIGURATION TO INTEGRATE TOKEN INTO REQUESTS
-// ===========================================================
+(function() {
+	'use strict';
+	
+	angular.module('hacw', [
+		'app.routes',
+		'ui.filters',
+		'app.services',
+		'app.controllers'
+	])
+	.config('configure', configure);
 
-.config(function($httpProvider){
-	// attach auth interceptor to the http requests
-	$httpProvider.interceptors.push('AuthInterceptor');
-});
+	configure.$inject = ['$httpProvider'];
+
+	function configure($httpProvider) {
+		$httpProvider.interceptors.push('AuthInterceptor');
+	}
+
+}());

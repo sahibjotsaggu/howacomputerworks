@@ -1,5 +1,5 @@
-angular.module('MainCtrl', ['searchService', 'userService', 'ui.router'])
-.controller('MainController', function($rootScope, $location, Auth, $scope, Search, User, $state) {
+angular.module('MainCtrl', ['ui.router'])
+.controller('MainController', function($rootScope, $location, Auth) {
 	var vm = this;
 	vm.createSample = function() {
 		Auth.createSampleUser();
@@ -16,32 +16,6 @@ angular.module('MainCtrl', ['searchService', 'userService', 'ui.router'])
 		{part: 'Graphics Card', link: 'other'},
 		{part: 'Sound Card', link: 'other'}
 	];*/
-	vm.topics = [];
-
-	vm.searchData = {topic_name: 'cd drive', link: 'other'};
-
-	vm.createSearchTerm = function() {
-		Search.create(vm.searchData)
-		.success(function(data) {
-			console.log(data);
-		});
-		console.log('no');
-	};
-	vm.createSearchTerm();
-	console.log('search term should be created.');
-
-	var search_term = '';
-
-	vm.startSearch = function(phrase) {
-		$state.go('search');
-		Search.find(phrase)
-		.success(function(data) {
-			console.log(data);
-			vm.topics.push(data[0]);
-		});
-	};
-
-
 
 	// when the user types in the search box
 	/*$('.search').keyup(function() {
