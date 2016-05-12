@@ -173,47 +173,6 @@ module.exports = function(app, express) {
 		});
 	});
 
-	// ROUTES THAT END IN /search
-	// =======================================
-
-	apiRouter.route('/search')
-	.post(function(req, res) {
-		var newSearchTerm = new Search();
-		newSearchTerm.topic_name = req.body.topic_name;
-		newSearchTerm.link = req.body.link;
-		//newSearchTerm.topic_name = 'Hard Drive';
-		//newSearchTerm.link = 'other';
-		newSearchTerm.save(function(err) {
-			if (err) {
-				if (err.code == 11000) {
-					return res.json({
-						success: false,
-						message: 'A search term with that topic already exists.'
-					});
-				}
-				else {
-					return res.send(err);
-				}
-			}
-			console.log('ayy');
-			res.json({message: 'Search term created.'});
-		});
-	});
-
-	// ROUTES THAT END IN /search/:search_term
-	// ======================================
-
-	apiRouter.route('/search/:search_term')
-	.get(function(req, res) {
-		Search.find({
-			topic_name: req.params.search_term
-		}, function(err, search_result) {
-			if (err) res.send(err);
-			res.json(search_result);
-			console.log(search_result);
-		});
-	});
-
 	// API ENDPOINT TO GET CURRENT USER INFORMATION
 	apiRouter.get('/me', function(req, res) {
 		res.send(req.decoded);

@@ -1,1 +1,0 @@
-<section class="user_query"><div class="container"><p>{{main.search_query.topic_name}}</p></div></section><section class="search_result"><div class="container"><ul><li><strong>Search Results</strong></li><li ng-repeat="topic in main.topics | filter: main.search_query | unique: 'topic_name'"><a ui-sref="{{topic.link}}">{{topic.topic_name}}</a></li></ul></div></section>

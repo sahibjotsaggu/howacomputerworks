@@ -12,3 +12,10 @@ pids
 
 # node_modules
 node_modules/
+
+# dist & gulpfile
+dist/
+gulpfile.js
+
+# install script
+install.sh
