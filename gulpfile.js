@@ -28,7 +28,7 @@ gulp.task('styles', function() {
 	return gulp.src(paths.styles)
 	.pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
 	.pipe(rename({suffix: '.min'}))
-	.pipe(gulp.dest('public/dist/assets/css'))
+	.pipe(gulp.dest('public/assets/css'))
 	.pipe(notify({message: 'Stylesheets have been converted to .sass and minified.'}));
 });
 
@@ -75,15 +75,10 @@ gulp.task('moveFiles', function() {
 
 gulp.task('watch', function() {
 	gulp.watch('public/assets/css/**/*.scss', ['styles']);
-	gulp.watch('public/assets/javascript/**/*.js', ['scripts']);
-	gulp.watch('public/app/**/*.js', ['scripts']);
-	gulp.watch('public/assets/images/**/*', ['images']);
-	gulp.watch('public/app/views/**/*.html', ['minifyViews']);
-	gulp.watch(['public/app/views/index.html', paths.fonts], ['moveFiles']);
 	livereload.listen();
-	gulp.watch(pathConcat).on('change', livereload.changed);
+	gulp.watch(paths.styles).on('change', livereload.changed);
 });
 
 gulp.task('default', function() {
-	gulp.start('styles', 'scripts', 'images', 'minifyViews', 'moveFiles', 'watch');
+	gulp.start('styles', 'watch');
 });

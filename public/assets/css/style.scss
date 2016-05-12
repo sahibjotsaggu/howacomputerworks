@@ -2,34 +2,33 @@
 
 @font-face {
 	font-family: 'Helvetica Neue';
-	src: url('../fonts/HelveticaNeue.otf');
+	src: url('../fonts/Helvetica Neue/HelveticaNeue.otf');
 }
 
 @font-face {
 	font-family: 'Helvetica Neue Bold';
-	src: url('../fonts/HelveticaNeue-Bold.otf');
+	src: url('../fonts/Helvetica Neue/HelveticaNeue-Bold.otf');
 }
 
 @font-face {
 	font-family: 'Helvetica Neue Medium';
-	src: url('../fonts/HelveticaNeue-Medium.otf');
+	src: url('../fonts/Helvetica Neue/HelveticaNeue-Medium.otf');
 }
 
 @font-face {
 	font-family: 'Helvetica Neue Light';
-	src: url('../fonts/HelveticaNeue-Light.otf');
+	src: url('../fonts/Helvetica Neue/HelveticaNeue-Light.otf');
 }
 
 @font-face {
 	font-family: 'Helvetica Neue Light2';
-	src: url('../fonts/HelveticaNeue-UltraLight.otf');
+	src: url('../fonts/Helvetica Neue/HelveticaNeue-UltraLight.otf');
 }
 
 $fontNormal: 'Helvetica Neue', sans-serif;
 $fontLight: 'Helvetica Neue Light2', sans-serif;
 $fontBold: 'Helvetica Neue Bold', sans-serif;
 
-/*$mainAccent: #f23e3e;*/
 $lightAccent: #3949AB;
 $darkAccent: #303F9F;
 
