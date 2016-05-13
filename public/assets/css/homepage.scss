@@ -38,17 +38,4 @@ $breakMedium: 992px;
 	font-weight: bold;
 	cursor: pointer;
 	@include transition(background 0.3s, color 0.3s);
-
 }
-/*
-.learn_more:hover {
-	background: #FFF;
-	color: $lightAccent;
-}
-
-@media only screen and (max-width: $breakMedium) {
-	.main_banner .container .col-md-6 {
-		margin-top: 100px;
-	}
-}
-*/
