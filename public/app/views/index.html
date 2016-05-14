@@ -14,50 +14,7 @@
 </head>
 <body ng-app="hacw">
 
-	<!--<section class="computer_parts">
-		<div class="row">
-			<div class="container">
-				<div class="col-md-6"></div>
-				<div class="col-md-6">
-					<button class="dd_close_button">Close</button>
-				</div>
-			</div>
-			<section class="dd_content">
-				<div class="nav_list_dd">
-					<ul>
-						<li><input type="text" class="search" ng-model="main.search_query.topic_name" placeholder="Search" maxlength="25" /></li>
-						<li><a ui-sref="other">Hard Drive</a></li>
-						<li><a ui-sref="other">Optical Drive</a></li>
-						<li><a ui-sref="other">Random Access Memory</a></li>
-						<li><a ui-sref="other">Central Processing Unit</a></li>
-						<li><a ui-sref="other">Power Supply</a></li>
-						<li><a ui-sref="other">Keyboard</a></li>
-						<li><a ui-sref="other">Cooling Fan</a></li>
-						<li><a ui-sref="other">Graphics Card</a></li>
-						<li><a ui-sref="other">Sound Card</a></li>
-					</ul>
-				</div>
-			</section>
-		</div>
-	</section>-->
-
-	<section class="navigation">
-		<div class="container">
-			<div class="col-sm-6">
-				<div class="main_title"><a ui-sref="home"><h1>How a Computer Works</h1></a></div>
-			</div>
-
-							<!--<form ng-submit="main.startSearch(main.search_query.topic_name)">
-								<input type="text" class="search" ng-model="main.search_query.topic_name" placeholder="Search" maxlength="25" />
-							</form>-->
-			<!--<div class="col-sm-6">
-				<button class="components_button">Parts</button>
-			</div>-->
-			
-			
-		</div>
-		<div class="hamburger"></div>
-	</section>
+	<hacw-header></hacw-header>
 
 	<div class="view" ui-view></div>
 
@@ -69,14 +26,16 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-css/1.0.8/angular-css.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui/0.4.0/angular-ui.min.js"></script>
-
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.7.0/angular-material-icons.min.js"></script>
+	
 	<script src="assets/javascript/script.js"></script>
 	<script src="app/app.services.js"></script>
 	<script src="app/services/AuthService.js"></script>
 	<script src="app/app.routes.js"></script>
+	<script src="app/app.directives.js"></script>
+	<script src="app/hacw-header/hacw-header.js"></script>
 	<script src="app/app.controllers.js"></script>
 	<script src="app/homepage/homepage.js"></script>
-	
 	<script src="app/app.js"></script>
 
 </body>

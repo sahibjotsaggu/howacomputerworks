@@ -15,21 +15,7 @@ function configure($stateProvider, $urlRouterProvider) {
 		url: '/home',
 		templateUrl: 'app/homepage/homepage.html',
 		css: '../assets/css/homepage.css',
-		controller: 'HomeController'
-	})
-	.state('other', {
-		url: '/other',
-		templateUrl: 'app/views/pages/other.html'
-	})
-	.state('search', {
-		url: '/search',
-		templateUrl: 'app/views/pages/search.html',
-		css: '../assets/css/search.css',
-		controller: 'SearchController'
-	})
-	.state('about', {
-		url: '/about',
-		templateUrl: 'app/views/pages/about.html',
-		css: '../assets/css/about.css'
+		controller: 'HomeController',
+		controllerAs: 'home'
 	});
 }

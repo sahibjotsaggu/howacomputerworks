@@ -5,15 +5,28 @@ angular.module('hacw', [
 	'app.routes',
 	'app.services',
 	'app.controllers',
-	'ngMaterial'
+	'app.directives',
+	'ngMaterial',
+	'ngMdIcons'
 ])
 .config(configure)
 .run(runBlock);
 
-configure.$inject = ['$httpProvider'];
+configure.$inject = ['$httpProvider', '$mdThemingProvider'];
 
-function configure($httpProvider) {
+function configure($httpProvider, $mdThemingProvider) {
 	$httpProvider.interceptors.push('AuthInterceptor');
+
+	/*
+	Available palettes: red, pink, purple, deep-purple, 
+	indigo, blue, light-blue, cyan, teal, green, 
+	light-green, lime, yellow, amber, orange, deep-orange,
+	brown, grey, blue-grey
+	*/
+
+	$mdThemingProvider.theme('default')
+	.primaryPalette('amber')
+	.accentPalette('orange');
 }
 
 function runBlock() {

@@ -1,0 +1,28 @@
+<div ng-controller="HeaderController as header">
+	<md-content>
+		<md-toolbar>
+			<div class="md-toolbar-tools">
+				<md-button class="md-icon-button" ng-click="header.openSideMenu()">
+					<ng-md-icon icon="menu"></ng-md-icon>
+				</md-button>
+				<h2>
+					<span>How a Computer Works</span>
+				</h2>
+				<span flex=""></span>
+				<md-button class="md-icon-button">
+					<ng-md-icon icon="search"></ng-md-icon>
+				</md-button>
+				<md-menu md-position-mode="target-right target">
+					<md-button class="md-icon-button" ng-click="$mdOpenMenu()">
+						<ng-md-icon icon="more_vert"></ng-md-icon>
+					</md-button>
+					<md-menu-content width="3">
+						<md-menu-item ng-repeat="item in [1,2,3]">
+							<md-button><span md-menu-align-target>Option</span> {{ item }}</md-button>
+						</md-menu-item>
+					</md-menu-content>
+				</md-menu>
+			</div>
+		</md-toolbar>
+	</md-content>
+</div>
