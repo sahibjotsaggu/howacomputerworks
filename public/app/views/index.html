@@ -12,9 +12,11 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700,500,400italic">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.8/angular-material.min.css">
 </head>
-<body ng-app="hacw">
+<body ng-app="hacw" ng-controller="MainController as main" ng-cloak="">
 
-	<hacw-header></hacw-header>
+	<hacw-header type="header"></hacw-header>
+	<hacw-sidenav></hacw-sidenav>
+
 
 	<div class="view" ui-view></div>
 
@@ -27,14 +29,19 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui/0.4.0/angular-ui.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.7.0/angular-material-icons.min.js"></script>
-	
+
 	<script src="assets/javascript/script.js"></script>
 	<script src="app/app.services.js"></script>
 	<script src="app/services/AuthService.js"></script>
+	<script src="app/services/datafactory.js"></script>
 	<script src="app/app.routes.js"></script>
 	<script src="app/app.directives.js"></script>
-	<script src="app/hacw-header/hacw-header.js"></script>
+	<script src="app/shared/directives/focus.js"></script>
+	<script src="app/hacw-header/hacw-header.directive.js"></script>
+	<script src="app/hacw-sidenav/hacw-sidenav.js"></script>
 	<script src="app/app.controllers.js"></script>
+	<script src="app/main.controller.js"></script>
+	<script src="app/hacw-header/hacw-header.controller.js"></script>
 	<script src="app/homepage/homepage.js"></script>
 	<script src="app/app.js"></script>
 

@@ -2,7 +2,8 @@
 	'use strict';
 
 	angular.module('app.services', [
-		'AuthService'
+		'AuthService',
+		'DataService'
 	]);
 	
 }());

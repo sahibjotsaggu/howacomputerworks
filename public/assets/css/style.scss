@@ -1,0 +1,52 @@
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+hacw-sidenav md-divider {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: #FFF;
+}
+
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color: #FFF;
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color: #FFF;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: #FFF;
+}
+
+/* hiding */
+.ng-hide-add {
+	animation: 0.1s hideIt;
+}
+
+@keyframes hideIt {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+/* showing */
+.ng-hide-remove {
+	animation: 0.5s showIt;
+}
+
+@keyframes showIt {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}

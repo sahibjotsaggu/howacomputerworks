@@ -17,5 +17,11 @@ function configure($stateProvider, $urlRouterProvider) {
 		css: '../assets/css/homepage.css',
 		controller: 'HomeController',
 		controllerAs: 'home'
+	})
+	.state('topic', {
+		url: '/topic/:topicName',
+		templateUrl: function($stateParams) {
+			return 'app/topics/' + $stateParams.topicName + '.html';
+		}
 	});
 }

@@ -2,12 +2,12 @@
 
 angular.module('hacw', [
 	'ui.filters',
+	'ngMaterial',
+	'ngMdIcons',
 	'app.routes',
 	'app.services',
 	'app.controllers',
-	'app.directives',
-	'ngMaterial',
-	'ngMdIcons'
+	'app.directives'
 ])
 .config(configure)
 .run(runBlock);
@@ -25,8 +25,8 @@ function configure($httpProvider, $mdThemingProvider) {
 	*/
 
 	$mdThemingProvider.theme('default')
-	.primaryPalette('amber')
-	.accentPalette('orange');
+	.primaryPalette('red')
+	.accentPalette('blue');
 }
 
 function runBlock() {
