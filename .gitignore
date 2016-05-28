@@ -21,7 +21,7 @@ gulpfile.js
 install.sh
 
 # sass-cache
-.sass-cache
+.sass-cache/
 
 # vagrant
 .vagrant/
