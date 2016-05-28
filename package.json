@@ -22,7 +22,7 @@
     "angular-route": "^1.4.8",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.14.2",
-    "express": "^4.13.3",
+    "express": "^4.13.4",
     "jsonwebtoken": "^5.4.1",
     "mongodb": "^2.1.2",
     "mongoose": "^4.3.4",

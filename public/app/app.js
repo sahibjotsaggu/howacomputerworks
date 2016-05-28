@@ -1,17 +1,21 @@
-(function() {
-	'use strict';
+'use strict';
 
-	angular.module('hacw', [
-		'ui.filters',
-		'app.routes',
-		'app.services'
-	])
-	.config(configure);
+angular.module('hacw', [
+	'ui.filters',
+	'app.routes',
+	'app.services',
+	'app.controllers',
+	'app.directives'
+])
+.config(configure)
+.run(runBlock);
 
-	configure.$inject = ['$httpProvider'];
+configure.$inject = ['$httpProvider'];
 
-	function configure($httpProvider) {
-		$httpProvider.interceptors.push('AuthInterceptor');
-	}
+function configure($httpProvider, $mdThemingProvider) {
+	$httpProvider.interceptors.push('AuthInterceptor');
+}
 
-}());
+function runBlock() {
+	console.log('HACW is ready for Angular Material!');
+}

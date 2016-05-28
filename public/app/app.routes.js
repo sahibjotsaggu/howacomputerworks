@@ -1,36 +1,27 @@
-(function() {
-	'use strict';
+'use strict';
 
-	angular.module('app.routes', [
-		'ui.router',
-		'angularCSS'
-	])
-	.config(configure);
+angular.module('app.routes', [
+	'ui.router',
+	'angularCSS'
+])
+.config(configure);
 
-	configure.$inject = ['$stateProvider', '$urlRouterProvider'];
+configure.$inject = ['$stateProvider', '$urlRouterProvider'];
 
-	function configure($stateProvider, $urlRouterProvider) {
-		$urlRouterProvider.otherwise('/home');
-		$stateProvider
-		.state('home', {
-			url: '/home',
-			templateUrl: 'app/views/pages/home.html',
-			css: '../assets/css/home.css'
-		})
-		.state('other', {
-			url: '/other',
-			templateUrl: 'app/views/pages/other.html'
-		})
-		.state('search', {
-			url: '/search',
-			templateUrl: 'app/views/pages/search.html',
-			css: '../assets/css/search.css',
-			controller: 'SearchController'
-		})
-		.state('about', {
-			url: '/about',
-			templateUrl: 'app/views/pages/about.html',
-			css: '../assets/css/about.css'
-		});
-	}
-}());
+function configure($stateProvider, $urlRouterProvider) {
+	$urlRouterProvider.otherwise('/home');
+	$stateProvider
+	.state('home', {
+		url: '/home',
+		templateUrl: 'app/homepage/homepage.html',
+		css: '../assets/css/homepage.css',
+		controller: 'HomeController',
+		controllerAs: 'home'
+	})
+	.state('topic', {
+		url: '/topic/:topicName',
+		templateUrl: function($stateParams) {
+			return 'app/topics/' + $stateParams.topicName + '.html';
+		}
+	});
+}

@@ -1,350 +1,138 @@
-@import 'mixins';
+@import "_mixins";
 
-@font-face {
-	font-family: 'Helvetica Neue';
-	src: url('../fonts/Helvetica Neue/HelveticaNeue.otf');
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
 }
 
-@font-face {
-	font-family: 'Helvetica Neue Bold';
-	src: url('../fonts/Helvetica Neue/HelveticaNeue-Bold.otf');
-}
+$navbarHeight: 50px;
+$bottomRibbon: 3px;
 
-@font-face {
-	font-family: 'Helvetica Neue Medium';
-	src: url('../fonts/Helvetica Neue/HelveticaNeue-Medium.otf');
-}
-
-@font-face {
-	font-family: 'Helvetica Neue Light';
-	src: url('../fonts/Helvetica Neue/HelveticaNeue-Light.otf');
-}
-
-@font-face {
-	font-family: 'Helvetica Neue Light2';
-	src: url('../fonts/Helvetica Neue/HelveticaNeue-UltraLight.otf');
-}
-
-$fontNormal: 'Helvetica Neue', sans-serif;
-$fontLight: 'Helvetica Neue Light2', sans-serif;
-$fontBold: 'Helvetica Neue Bold', sans-serif;
-
-$lightAccent: #3949AB;
-$darkAccent: #303F9F;
-
-$breakSmall: 768px;
-$breakMedium: 992px;
-
-$dd_nav_height: 40px;
-
-body {
-	font-family: $fontNormal;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	margin: 0px;
-}
-
-h1 {
-	margin: 0px;
-	font-size: 30px;
-	line-height: 80px;
-	font-size: 25px;
-	color: #FFF;
-	font-family: $fontNormal;
-	/* try important if no work */
-}
-
-a, a:hover {
-	text-decoration: none!important;
-}
-
-.computer_parts, .navigation {
-	position: fixed;
-	left: 0px;
-	width: 100%;
-}
-
-.computer_parts {
-	top: calc(-100% - 20px);
-	height: 100%;
-	background: #FFF;
-	box-shadow: 0px -5px 20px #000;
-	z-index: 2000;
-	@include transition(top 0.4s cubic-bezier(.42,0,1,1));
-}
-
-.top_heading {
-	padding-top: 50px;
-}
-
-.hamburger {
-	display: none;
-}
-
-ul {
-	margin: 0px;
-	padding: 0px;
-	list-style-type: none;
-}
-
-.parts_section_title {
-	font-family: $fontBold;
-	font-size: 13px;
-	color: #999;
-	text-transform: uppercase;
-}
-
-.close_button_wrapper {
-	padding: 5px 5px 5px 0px;
-	cursor: pointer;
-	color: #000;
-}
-
-.computer_parts .col-sm-4 {
-	a {
-		text-decoration: none;
-		color: #000;
-		outline: none;
-		@include transition(color 0.2s);
-	}
-
-	a:hover, a:focus {
-		color: $lightAccent;
-	}
-
-	h3 {
-		font-size: 21px;
-	}
-}
-
-.navigation {
-	float: left;
-	top: 0px;
-	height: 80px;
-	z-index: 1000!important;
-	background: $lightAccent;
-	.container .col-sm-6:nth-child(2) button {
-		float: right;
-	}
-}
-
-.main_title {
-	padding-left: 40px;
-}
-
-.dropdown_nav {
-	background: #FFF;
-}
-
-.right_action {
-	ul {
-		list-style-type: none;
-		background: $lightAccent;
-		height: 80px;
-	}
-
-	ul li {
-		display: inline-block;
-		float: right;
-		margin-right: 20px;
-	}
-}
-
-.components_button, .dd_close_button {
-	height: 35px;
-	width: 120px;
-	margin-top: 22.5px;
-	border: 2px solid #FFF;
-	border-radius: 20px;
-	color: #FFF;
-	outline: none;
-	font-family: $fontBold;
-	background: transparent;
-	text-transform: uppercase;
-	font-size: 11px;
-	line-height: 28px;
-	@include transition(background 0.3s, color 0.3s);
-}
-
-.components_button:hover {
-	background: #FFF;
-	color: $lightAccent;
-}
-
-.dd {
-	visibility: hidden;
-}
-
-.dd_close_button {
-	float: right;
-	border: 2px solid $lightAccent;
-	color: $lightAccent;
-}
-
-.dd_close_button:hover {
-	background: $lightAccent;
-	color: #FFF;
-}
-
-.dd_content {
-	position: absolute;
-	top: 80px;
-	left: 0px;
-	width: 100%;
-	height: calc(100% - 265px);
-	.nav_list_dd {
-		position: absolute;
-		top: 0px;
-		left: calc(50% - 150px);
-		width: 300px;
-		height: auto;
-	}
-	.nav_list_dd {
-		ul li {
-			width: 300px;
-			height: $dd_nav_height;
-			text-align: center;
-			margin-top: 10px;
-		}
-	}
-	.nav_list_dd {
-		ul li a {
-			float: left;
-			color: $lightAccent;
-			font-family: $fontBold;
-			text-transform: uppercase;
-			font-size: 11px;
-			width: 100%;
-			height: 100%;
-			text-align: center;
-			line-height: $dd_nav_height;
-			border-radius: 27px;
-			@include transition(background 0.3s, color 0.3s);
-		}
-		ul li a:hover {
-			background: $lightAccent;
-			color: #FFF;
-		}
-	}
-}
-
-.search {
-	width: 300px;
-	height: $dd_nav_height;
-	border: 0px;
-	outline: none;
-	padding: 0px;
-	border-radius: $dd_nav_height / 2;
-	font-size: 11.5px;
-	font-family: $fontBold;
-	background: #FFF;
-	border: 2px solid $lightAccent;
-	color: $lightAccent;
-	text-transform: uppercase;
-	text-align: center;
-}
-
-::-webkit-input-placeholder {
-	text-align: center;
-}
-
-:-moz-placeholder {
-	text-align: center; /* Firefox 18- */
-}
-
-::-moz-placeholder {
-	text-align: center; /* Firefox 19+ */
-}
-
-:-ms-input-placeholder {
-	text-align: center;
-}
-
-.hamburger {
-	position: absolute;
-	top: 0px;
-	right: 10px;
-	width: 80px;
-	height: 80px;
-	background: url('../images/hamburger_menu.png') no-repeat center center;
-	background-size: 40%;
-	cursor: pointer;
-}
+/* START: homepage view */
 
 .view {
-	margin-top: 80px;
-	z-index: -1000!important;
+	margin-top: $navbarHeight;
 }
 
-footer {
-	padding: 50px 0px 50px 0px;
-	background: #FFF;
-	ul li a {
-		float: left;
-		margin-left: 15px;
-		height: 35px;
-		text-align: center;
-		width: 120px;
-		border-radius: 20px;
-		color: $lightAccent;
-		font-family: $fontBold;
-		background: #FFF;
-		text-transform: uppercase;
-		font-size: 11px;
-		line-height: 35px;
-		@include transition(background 0.3s, color 0.3s);
-	}
-	ul li {
-		a:hover, a:focus {
-			color: #FFF;
-			background: $lightAccent;
+/* END: homepage view */
+
+/* START: hacw-header */
+
+hacw-header {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: $navbarHeight;
+	background: #FFFFFF;
+	/*box-shadow: 0px 2px 8px #DDDDDD;*/
+	border-bottom: 1px solid #DDDDDD;
+
+	nav {
+		background: transparent!important;
+		border: none!important;
+		height: $navbarHeight!important;
+		font-weight: 400;
+		.navbar-brand {
+			float: left;
+			width: 200px;
+			padding: 0px;	
 		}
-	} 
+		.navbar-nav {
+			li#brandLogo a {
+			padding: 0px;
+				#logo {
+					padding: 6px;
+					width: $navbarHeight;
+				}
+			}
+			li#brandName a {
+				font-size: 24px;
+				font-family: "Cabin";
+				font-weight: 600;
+			}
+			li#active a {
+				height: $navbarHeight;
+				border-bottom: $bottomRibbon solid #009688;
+			}
+		}
+	}	
 }
 
-@media only screen and (max-width: $breakMedium) {
-	.navigation .container {
-		margin: 0px;
-		margin-left: 26.5px;
-		width: calc(100% - 156.5px);
+/* END: hacw-header */
+
+/* START: hacw-banner */
+
+$jumbotronHeight: 300px;
+
+hacw-banner {
+	.jumbotron {
+		margin-top: $navbarHeight;
+		background: #009688;
+		.container {
+			color: #FFF;
+		}
+		h1 {
+			font-size: 40px;
+			font-weight: 300;
+		}
 	}
 }
 
-@media only screen and (max-width: $breakSmall) {
-	.computer_parts {
-		overflow-y: scroll;
-	}
-	.main_title h1 {
-		font-size: 20px;
-	}
-	.hamburger {
-		display: block;
-	}
-	.navigation .container .col-sm-6:nth-child(2) {
-		display: none;
-	}
-	.dd_close_button {
-		position: absolute;
-		right: calc(50% - 150px);
+/* END: hacw-banner */
+
+/* START: hacw-button */
+
+hacw-button {
+	button {
+		background: #FFF;
+		border: 0px;
+		border-radius: 2px;
+		font-size: 14px;
+		font-family: 'Roboto';
+		font-weight: 400;
+		color: #009688;
+		box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+		padding: 8px 16px 8px 16px;
+		@include transition(background 0.2s, box-shadow 0.2s);
+		&:focus {
+			outline: none;
+		}
+		&:hover {
+			background: rgba(242,242,242,1);
+			box-shadow: 0 4px 7px 0 rgba(0,0,0,.26);
+		}
+		&:active {
+			box-shadow: 0 8px 9px 0 rgba(0,0,0,.26);
+		}
 	}
 }
 
+/* END: hacw-button */
 
+/* hiding */
+.ng-hide-add {
+	animation: 0.1s hideIt;
+}
 
+@keyframes hideIt {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
 
+/* showing */
+.ng-hide-remove {
+	animation: 0.5s showIt;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@keyframes showIt {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}

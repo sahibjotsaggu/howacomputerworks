@@ -19,3 +19,10 @@ gulpfile.js
 
 # install script
 install.sh
+
+# sass-cache
+.sass-cache/
+
+# vagrant
+.vagrant/
+Vagrantfile

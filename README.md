@@ -1,7 +1,5 @@
-# howacomputerworks
+# How A Computer Works
 Creating an interactive website to teach users about the functionality of different parts of a computer intuitively.
-
-![Homepage background](https://raw.githubusercontent.com/sahibjotsaggu/howacomputerworks/master/public/assets/images/main_bg.png)
 
 ## How to Run this project on Mac OS X
 
