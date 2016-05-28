@@ -22,3 +22,7 @@ install.sh
 
 # sass-cache
 .sass-cache
+
+# vagrant
+.vagrant/
+Vagrantfile
