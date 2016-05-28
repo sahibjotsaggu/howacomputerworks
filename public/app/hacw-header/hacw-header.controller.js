@@ -14,18 +14,15 @@ function HeaderController($scope) {
 		color: 'white', 
 		fontSize: '17px',
 		visibility: 'hidden',
-		borderBottomColor: 'white',
 		'-webkit-transition': 'width 0.3s, margin-left 0.3s, visibility 0.3s'
 	};
 
-	// Toggling the search bar 
 	vm.searchBarToggle = function(stateOfSearch) {
 		if (stateOfSearch === false) {
 			vm.searchActive = true;
 			vm.searchStyle.visibility = 'visible';
 			vm.searchStyle.width = '350px';
 			vm.searchStyle.marginLeft = '-350px';
-			$('.main-search').focus();
 		}
 		else {
 			vm.searchActive = false;

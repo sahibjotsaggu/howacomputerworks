@@ -1,27 +1,113 @@
+@import "_mixins";
+
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
 }
 
-hacw-sidenav md-divider {
-	margin-top: 10px;
-	margin-bottom: 10px;
+$navbarHeight: 50px;
+$bottomRibbon: 3px;
+
+/* START: homepage view */
+
+.view {
+	margin-top: $navbarHeight;
 }
 
-::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color: #FFF;
+/* END: homepage view */
+
+/* START: hacw-header */
+
+hacw-header {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: $navbarHeight;
+	background: #FFFFFF;
+	/*box-shadow: 0px 2px 8px #DDDDDD;*/
+	border-bottom: 1px solid #DDDDDD;
+
+	nav {
+		background: transparent!important;
+		border: none!important;
+		height: $navbarHeight!important;
+		font-weight: 400;
+		.navbar-brand {
+			float: left;
+			width: 200px;
+			padding: 0px;	
+		}
+		.navbar-nav {
+			li#brandLogo a {
+			padding: 0px;
+				#logo {
+					padding: 6px;
+					width: $navbarHeight;
+				}
+			}
+			li#brandName a {
+				font-size: 24px;
+				font-family: "Cabin";
+				font-weight: 600;
+			}
+			li#active a {
+				height: $navbarHeight;
+				border-bottom: $bottomRibbon solid #009688;
+			}
+		}
+	}	
 }
 
-:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-   color: #FFF;
+/* END: hacw-header */
+
+/* START: hacw-banner */
+
+$jumbotronHeight: 300px;
+
+hacw-banner {
+	.jumbotron {
+		margin-top: $navbarHeight;
+		background: #009688;
+		.container {
+			color: #FFF;
+		}
+		h1 {
+			font-size: 40px;
+			font-weight: 300;
+		}
+	}
 }
 
-::-moz-placeholder { /* Mozilla Firefox 19+ */
-   color: #FFF;
+/* END: hacw-banner */
+
+/* START: hacw-button */
+
+hacw-button {
+	button {
+		background: #FFF;
+		border: 0px;
+		border-radius: 2px;
+		font-size: 14px;
+		font-family: 'Roboto';
+		font-weight: 400;
+		color: #009688;
+		box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+		padding: 8px 16px 8px 16px;
+		@include transition(background 0.2s, box-shadow 0.2s);
+		&:focus {
+			outline: none;
+		}
+		&:hover {
+			background: rgba(242,242,242,1);
+			box-shadow: 0 4px 7px 0 rgba(0,0,0,.26);
+		}
+		&:active {
+			box-shadow: 0 8px 9px 0 rgba(0,0,0,.26);
+		}
+	}
 }
 
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-   color: #FFF;
-}
+/* END: hacw-button */
 
 /* hiding */
 .ng-hide-add {

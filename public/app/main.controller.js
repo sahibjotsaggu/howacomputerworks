@@ -2,18 +2,17 @@
 
 appControllers.controller('MainController', MainController);
 
-MainController.$inject = ['$state', '$mdSidenav', 'datafactory', '$interval'];
+MainController.$inject = ['$state', 'datafactory', '$interval'];
 
-function MainController($state, $mdSidenav, datafactory, $interval) {
+function MainController($state, datafactory, $interval) {
 	var vm = this;
 
 	vm.topics = datafactory.getTopics();
 
-	vm.openSideMenu = function() {
-		$mdSidenav('left').toggle();
-	};
+	vm.currentWindowName = 'Home';
 
-	vm.changeState = function(stateName, param) {
+	//	vm.changeState(stateName, param, [topicName]); (optional)
+	vm.changeState = function(stateName, param, topicName) {
 		console.log(stateName);
 		console.log(param);
 		if (param === undefined) {
@@ -24,6 +23,8 @@ function MainController($state, $mdSidenav, datafactory, $interval) {
 				$state.go(stateName, {'topicName': param});
 			}
 		}
-		$mdSidenav('left').toggle();
+		if (topicName) {
+			vm.currentWindowName = topicName;
+		}
 	};
 }

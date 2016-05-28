@@ -1,9 +1,6 @@
-(function() {
-	'use strict';
+'use strict';
 
-	angular.module('app.services', [
-		'AuthService',
-		'DataService'
-	]);
-	
-}());
+angular.module('app.services', [
+	'AuthService',
+	'DataService'
+]);

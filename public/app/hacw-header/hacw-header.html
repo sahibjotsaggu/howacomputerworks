@@ -1,32 +1,31 @@
 <div ng-controller="HeaderController as header">
-	<md-content>
-		<md-toolbar>
-			<div class="md-toolbar-tools">
-				<md-button class="md-icon-button" style="fill: white;" ng-click="main.openSideMenu()">
-					<ng-md-icon icon="menu"></ng-md-icon>
-				</md-button>
-				<h2>
-					<span>Home</span>
-				</h2>
-				<span flex=""></span>
-				<md-input-container md-no-float class="md-block">
-					<input class="main-search" placeholder="Search" ng-style="header.searchStyle" focus="true">
-				</md-input-container>
-				<md-button class="md-icon-button" style="fill: white;" ng-click="header.searchBarToggle(header.searchActive)">
-					<ng-md-icon ng-show="!header.searchActive" icon="search"></ng-md-icon>
-					<ng-md-icon ng-show="header.searchActive" icon="close"></ng-md-icon>
-				</md-button>
-				<md-menu md-position-mode="target-right target">
-					<md-button class="md-icon-button" ng-click="$mdOpenMenu()">
-						<ng-md-icon icon="more_vert" style="fill: white;"></ng-md-icon>
-					</md-button>
-					<md-menu-content width="3">
-						<md-menu-item ng-repeat="item in [1,2,3]">
-							<md-button><span md-menu-align-target>Option</span> {{ item }}</md-button>
-						</md-menu-item>
-					</md-menu-content>
-				</md-menu>
-			</div>
-		</md-toolbar>
-	</md-content>
+	<nav class="navbar navbar-default navbar-static-top">
+		<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+		<!--<a class="navbar-brand" href="#">
+		<img alt="HACW" src="assets/images/sample-logo.png">
+		</a>-->
+		</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li id="brandLogo"><a href="#"><img alt="Ekto" src="assets/images/sample-logo4.png" id="logo"></a></li>
+					<li id="brandName"><a href="#">Ekto</a></li>
+					<li id="active"><a href="#">Home</a></li>
+					<li><a href="#">Topics</a></li>
+					<li><a href="#about">About</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+				<!--<li class="active"><a href="./">Static top <span class="sr-only">(current)</span></a></li>-->
+					<li><a href="../navbar-fixed-top/">Fixed top</a></li>
+				</ul>
+			</div><!--/.nav-collapse -->
+		</div>
+	</nav>
 </div>

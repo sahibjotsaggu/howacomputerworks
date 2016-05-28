@@ -30,7 +30,7 @@ app.use(function(req, res, next) {
 // log all the requests to the console
 app.use(morgan('dev'));
 
-// connect to the mongodb
+// connect to mongodb
 mongoose.connect(config.database);
 
 // set static files location
