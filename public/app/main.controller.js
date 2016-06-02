@@ -2,12 +2,14 @@
 
 appControllers.controller('MainController', MainController);
 
-MainController.$inject = ['$state', 'datafactory', '$interval'];
+MainController.$inject = ['$scope', '$state', 'datafactory', '$interval'];
 
-function MainController($state, datafactory, $interval) {
+function MainController($scope, $state, datafactory, $interval) {
 	var vm = this;
 
 	vm.topics = datafactory.getTopics();
+
+	$scope.$state = $state;
 
 	vm.currentWindowName = 'Home';
 
