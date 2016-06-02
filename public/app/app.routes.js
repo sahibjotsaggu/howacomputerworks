@@ -6,9 +6,9 @@ angular.module('app.routes', [
 ])
 .config(configure);
 
-configure.$inject = ['$stateProvider', '$urlRouterProvider'];
+configure.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
 
-function configure($stateProvider, $urlRouterProvider) {
+function configure($stateProvider, $urlRouterProvider, $locationProvider) {
 	$urlRouterProvider.otherwise('/home');
 	$stateProvider
 	.state('home', {
@@ -22,6 +22,22 @@ function configure($stateProvider, $urlRouterProvider) {
 		url: '/topic/:topicName',
 		templateUrl: function($stateParams) {
 			return 'app/topics/' + $stateParams.topicName + '.html';
-		}
+		},
+		css: '../assets/css/topics.css',
+		controller: 'TopicController',
+		controllerAs: 'topics'
+	})
+	.state('about', {
+		url: '/about',
+		templateUrl: 'app/about/about.html',
+		css: '../assets/css/about.css'
 	});
+
+	// for pretty URL (remove # from URL)
+	if (window.history && window.history.pushState) {
+		$locationProvider.html5Mode({
+			enabled: true,
+			requireBase: false
+		});
+	}
 }
