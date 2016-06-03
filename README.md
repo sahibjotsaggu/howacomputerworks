@@ -10,8 +10,6 @@ Creating an interactive website to teach users about the functionality of differ
 
 `npm install`
 
-Make sure to have `mongod` running in another terminal.
-
 `npm start`
 
 Go to [localhost:8030](http://localhost:8030)
