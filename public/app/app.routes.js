@@ -14,7 +14,10 @@ function configure($stateProvider, $urlRouterProvider, $locationProvider) {
 	.state('home', {
 		url: '/home',
 		templateUrl: 'app/homepage/homepage.html',
-		css: '../assets/css/homepage.css',
+		css: {
+			href: '../assets/css/homepage.css',
+			persist: true
+		},
 		controller: 'HomeController',
 		controllerAs: 'home'
 	})
@@ -30,7 +33,10 @@ function configure($stateProvider, $urlRouterProvider, $locationProvider) {
 	.state('about', {
 		url: '/about',
 		templateUrl: 'app/about/about.html',
-		css: '../assets/css/about.css'
+		css: {
+			href: '../assets/css/about.css',
+			persist: true
+		}
 	});
 
 	// for pretty URL (remove # from URL)
