@@ -1,15 +1,2 @@
-body {
-  font-family: "Roboto";
-  font-weight: 300; }
-
-.container {
-  padding-left: 15px;
-  padding-right: 15px; }
-
-p {
-  font-size: 17px;
-  font-weight: 400;
-  line-height: 30px;
-  margin-bottom: 20px; }
-
+body{font-family:"Roboto";font-weight:300}.container{padding-left:15px;padding-right:15px}p{font-size:17px;font-weight:400;line-height:30px;margin-bottom:20px}
 /*# sourceMappingURL=topics.css.map */
