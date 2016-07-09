@@ -16,11 +16,6 @@ Creating an interactive website to teach users about the functionality of differ
 
 Go to [localhost:8030](http://localhost:8030)
 
-## Contributers
-[Sahibjot Saggu](http://www.sahibjot.me/)
-
-[Neeraj Aggarwal](http://www.neerajaggarwal.com/)
-
 ## License
 
 MIT License
