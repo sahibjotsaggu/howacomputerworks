@@ -9,10 +9,12 @@ function TopicController($scope, $state, datafactory) {
 	vm.topics = datafactory.getTopics();
 	$scope.$state = $state;
 	vm.currentTopic = $scope.$state.params.topicName;
-	for (var x = 0; x < vm.topics.length; x++) {
-		if (vm.topics[x].param === vm.currentTopic) {
-			vm.topicText = vm.topics[x].name;
-			break;
+
+	vm.getTopicName = function() {
+		for (var x = 0; x < vm.topics.length; x++) {
+			if (vm.topics[x].param === vm.currentTopic) {
+				return vm.topics[x].name;
+			}
 		}
-	}
+	};
 }
