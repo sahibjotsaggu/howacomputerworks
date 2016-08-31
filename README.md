@@ -14,7 +14,12 @@ Creating an interactive website to teach users about the functionality of differ
 
 `npm start`
 
-Go to [localhost:8030](http://localhost:8030)
+Go to [localhost:8080](http://localhost:8080)
+
+### Currently working on
+
+* Content for various topics
+* Illustrations
 
 ## License
 

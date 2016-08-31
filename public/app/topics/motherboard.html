@@ -1,0 +1,70 @@
+<div class="container">
+	<div class="col-sm-3"></div>
+	<div class="col-sm-6">
+		<br>
+		<h1 style="font-weight: 300;">{{ topics.getTopicName() }}</h1>
+		<br>
+		<div class="row">
+			<p><span class="highlight">The motherboard of a computer is like a tree trunk; there are many branches connected to it.</span> The main purpose of a motherboard is to help the different parts of the computer communicate with each other. Without the motherboard, even the CPU cannot operate.</p>
+		</div>
+		<div class="row">
+			<p>We’ll cover several major components of the motherboard:</p>
+		</div>
+		<h4>Sockets</h4>
+		<div class="row">
+			<p>Most motherboards have a CPU socket which restricts the type of processor that can be connected to it. This restriction is enforced with the use of a Pin Grid Array (PGA). The PGA works similar to a shape sorter toy for children. The processor can only fit on the socket if the holes in the socket perfectly match the pins on the processor.</p>
+		</div>
+		<div class="row">
+			<p>Some newer CPU models do not have a PGA. Instead, they have a Land Grid Array (LGA). The LGA contains the pins directly on the socket instead of the processor. The processor is then mounted on the socket and secured in place.</p>
+		</div>
+		<div class="row">
+			<p>The other components of the motherboard communicate with the CPU through the chipset.</p>
+		</div>
+		<h4>Chipset</h4>
+		<div class="row">
+			<p>As mentioned above, the chipset handles the communication between the CPU, memory and the Accelerated Graphics Port (AGP, also known as the video card). The chipset consists of a ‘set of chips’ called the northbridge and the southbridge. These two chips have different functions as outlined below:</p>
+		</div>
+		<h4>Northbridge</h4>
+		<div class="row">
+			<p>The northbridge is called that because it is usually located above the southbridge on the motherboard. The northbridge and southbridge are literally ‘bridges’ between the major motherboard components.</p>
+		</div>
+		<h4>BIOS</h4>
+		<div class="row">
+			<p>Currently researching content...</p>
+		</div>
+		<h4>CMOS Battery</h4>
+		<div class="row">
+			<p>Currently researching content...</p>
+		</div>
+		<h4>PCI</h4>
+		<div class="row">
+			<p>Currently researching content...</p>
+		</div>
+		<h4>AGP</h4>
+		<div class="row">
+			<p>Currently researching content...</p>
+		</div>
+		<h4>IDE</h4>
+		<div class="row">
+			<p>Currently researching content...</p>
+		</div>
+		<h4>Memory Slots</h4>
+		<div class="row">
+			<p>Currently researching content...</p>
+		</div>
+		<!--<div class="row">
+			<p class="lastParagraph">You might be wondering how the disk head actually reads or writes on the disk: when the hard disk is told which sector it wants to read, the disk arm moves so that the disk head is on top of the right track and simply waits for the correct sector to come under the disk head. When the computer tells the hard disk to save something in its memory (writing), the disk arm finds the next available spot (using the map we talked about) and magnetizes a very small spot on the track.</p>
+		</div>-->
+		<h3>References</h3>
+		<div class="row">
+			<ol class="referenceList">
+			<li ng-repeat="referenceItem in topics.references">
+				<a ng-if="referenceItem.isLink && referenceItem.link.length > 0" target="_blank" href="{{ referenceItem.link }}">{{ referenceItem.item }}</a>
+				<a ng-if="referenceItem.isLink && referenceItem.link.length === 0" target="_blank" href="{{ referenceItem.item }}">{{ referenceItem.item }}</a>
+				<div ng-if="!referenceItem.isLink">{{ referenceItem.item }}</div>
+			</li>
+			</ol>
+		</div>
+	</div>
+	<div class="col-sm-3"></div>
+</div>

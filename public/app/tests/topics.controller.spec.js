@@ -20,7 +20,34 @@ describe("topics controller", function() {
 			var $scope = {};
 			var controller = $controller('TopicController', {$scope: $scope, datafactory: datafactory});
 			controller.topics = datafactory.getTopics();
-			expect(controller.topics.length).toEqual(9);
+			expect(controller.topics.length).toEqual(10);
+		});
+	});
+
+	describe("datafactory references", function() {
+		it("should return the correct reference list", function() {
+			var $scope = {};
+			var controller = $controller('TopicController', {$scope: $scope, datafactory: datafactory});
+			controller.currentTopic = 'hard-drive';
+			expect(datafactory.getReferenceList(controller.currentTopic).length).toEqual(4);
+			controller.currentTopic = 'motherboard';
+			expect(datafactory.getReferenceList(controller.currentTopic).length).toEqual(3);
+		});
+
+		it("should have a item OR link that starts with 'http' if isLink is truthy", function() {
+			var $scope = {};
+			var controller = $controller('TopicController', {$scope: $scope, datafactory: datafactory});
+			controller.currentTopic = 'hard-drive';
+			var refList = datafactory.getReferenceList(controller.currentTopic)
+			for (var refItem = 0; refItem < refList.length; refItem++) {
+				if (refList[refItem].isLink) {
+					if (!refList[refItem].link) {
+						expect(refList[refItem].item.slice(0,4)).toEqual('http');
+					}
+				} else {
+					expect(refList[refItem].link).toBeUndefined();
+				}
+			}
 		});
 	});
 
@@ -29,8 +56,10 @@ describe("topics controller", function() {
 			var $scope = {};
 			var controller = $controller('TopicController', {$scope: $scope, datafactory: datafactory});
 			controller.topics = datafactory.getTopics();
-			controller.currentTopic = 'hard-drive';
-			expect(controller.getTopicName()).toEqual('Hard Drive');
+			for (var eachTopic = 0; eachTopic < controller.topics.length; eachTopic++) {
+				controller.currentTopic = controller.topics[eachTopic].param;
+				expect(controller.getTopicName()).toEqual(controller.topics[eachTopic].name);
+			}
 		});
 	});
 });

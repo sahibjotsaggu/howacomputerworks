@@ -1,0 +1,34 @@
+<div class="container">
+	<div class="col-sm-3"></div>
+	<div class="col-sm-6">
+		<br>
+		<h1 style="font-weight: 300;">{{ topics.getTopicName() }}</h1>
+		<br>
+		<div class="row">
+			<p>The hard drive serves as the computer’s long term memory. All the applications on the computer and the operating system itself are stored in the hard drive so that the computer remembers everything even after shutting it down.</p>
+		</div>
+		<div class="row">
+			<p>Hard drives (or hard disk drives) use electromagnetism (electricity and magnetism) to store information. A rotating disk called a <strong>platter</strong> is made from shiny material (such as aluminum or even glass) and has a magnetic layer coated on each side. This allows the information to stay on the disk even when the computer is turned off. The disk is connected to a <strong>spindle</strong> in the middle which spins really fast because of the motor under the disk.</p>
+		</div>
+		<div class="row">
+			<p>A <strong>disk arm</strong> which moves very quickly across the disk. This is the part that reads and writes to the computer. These two very important tasks are done by the <strong>disk head</strong> which is at the end of the disk arm.</p>
+		</div>
+		<div class="row">
+			<p>Similar to a race track, there are extremely small tracks on the disk that are divided into chunks called <strong>sectors</strong>. A small part of the hard disk is used to keep a map or blueprint of which sectors are available to write on and which ones are already written on.</p>
+		</div>
+		<div class="row">
+			<p class="lastParagraph">You might be wondering how the disk head actually reads or writes on the disk: when the hard disk is told which sector it wants to read, the disk arm moves so that the disk head is on top of the right track and simply waits for the correct sector to come under the disk head. When the computer tells the hard disk to save something in its memory (writing), the disk arm finds the next available spot (using the map we talked about) and magnetizes a very small spot on the track.</p>
+		</div>
+		<h3>References</h3>
+		<div class="row">
+			<ol class="referenceList">
+			<li ng-repeat="referenceItem in topics.references">
+				<a ng-if="referenceItem.isLink && referenceItem.link.length > 0" target="_blank" href="{{ referenceItem.link }}">{{ referenceItem.item }}</a>
+				<a ng-if="referenceItem.isLink && referenceItem.link.length === 0" target="_blank" href="{{ referenceItem.item }}">{{ referenceItem.item }}</a>
+				<div ng-if="!referenceItem.isLink">{{ referenceItem.item }}</div>
+			</li>
+			</ol>
+		</div>
+	</div>
+	<div class="col-sm-3"></div>
+</div>

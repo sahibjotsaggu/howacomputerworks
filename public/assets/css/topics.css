@@ -1,2 +1,30 @@
-body{font-family:"Roboto";font-weight:300}.container{padding-left:15px;padding-right:15px}p{font-size:17px;font-weight:400;line-height:30px;margin-bottom:20px}
+body {
+  font-family: "Roboto";
+  font-weight: 300; }
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px; }
+
+p {
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 30px;
+  margin-bottom: 20px; }
+
+h4 {
+  margin-top: 0px; }
+
+.referenceList {
+  padding-left: 19px;
+  font-size: 17px;
+  font-weight: 400;
+  word-wrap: break-word; }
+
+.lastParagraph {
+  margin-bottom: 0px; }
+
+.highlight {
+  background: #FFFF00; }
+
 /*# sourceMappingURL=topics.css.map */
