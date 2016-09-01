@@ -17,5 +17,4 @@ function TopicController($scope, $state, datafactory) {
 			break;
 		}
 	}
-
 }

@@ -2,9 +2,9 @@
 
 appControllers.controller('MainController', MainController);
 
-MainController.$inject = ['$scope', '$state', 'datafactory', '$interval'];
+MainController.$inject = ['datafactory'];
 
-function MainController($scope, $state, datafactory, $interval) {
+function MainController(datafactory) {
 	var vm = this;
 	vm.topics = datafactory.getTopics();
 }
