@@ -37,9 +37,21 @@ function datafactory() {
 		}
 	];
 
+	var banner = {
+		'home': {
+			heading: 'Learn how computers work',
+			subheading: 'HACW is an interactive website that teaches you how<br> computer parts work.'
+		},
+		'about': {
+			heading: 'About Us',
+			subheading: 'Meet the creators who are working on HACW.'
+		}
+	};
+
     var data = {
         getTopics: getTopics,
-        getReferenceList: getReferenceList
+        getReferenceList: getReferenceList,
+        getBanner: getBanner
     };
 
     return data;
@@ -55,4 +67,8 @@ function datafactory() {
     		}
     	}
     };
+
+    function getBanner(state) {
+    	return [banner[state].heading, banner[state].subheading];
+    }
 }

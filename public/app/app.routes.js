@@ -36,7 +36,9 @@ function configure($stateProvider, $urlRouterProvider, $locationProvider) {
 		css: {
 			href: '../assets/css/about.css',
 			persist: true
-		}
+		},
+		controller: 'AboutController',
+		controllerAs: 'about'
 	});
 
 	// for pretty URL (remove # from URL)
