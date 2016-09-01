@@ -19,6 +19,7 @@ Go to [localhost:8080](http://localhost:8080)
 ### Currently working on
 
 * Content for various topics
+* Writing tests for controllers
 * Illustrations
 
 ## License
