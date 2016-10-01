@@ -6,13 +6,12 @@ Creating an interactive website to teach users about the functionality of differ
 
 ### How to run this project
 
-`git clone https://github.com/sahibjotsaggu/howacomputerworks.git`
-
-`cd howacomputerworks`
-
-`npm install`
-
-`npm start`
+```
+git clone https://github.com/sahibjotsaggu/howacomputerworks.git
+cd howacomputerworks
+npm install
+npm start
+```
 
 Go to [localhost:8080](http://localhost:8080)
 
