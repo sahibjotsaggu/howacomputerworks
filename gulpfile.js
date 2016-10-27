@@ -1,6 +1,5 @@
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
-    cssnano = require('gulp-cssnano'),
     jshint = require('gulp-jshint'),
     uglify = require('gulp-uglify'),
     imagemin = require('gulp-imagemin'),
@@ -8,6 +7,7 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     notify = require('gulp-notify'),
     cache = require('gulp-cache'),
+    concat = require('gulp-concat'),
     livereload = require('gulp-livereload'),
     del = require('del');
 
@@ -32,9 +32,20 @@ gulp.task('styles', function() {
 	.pipe(notify({message: 'Stylesheets have been converted to .sass and minified.'}));
 });
 
-// task to JShint all the user-written javascript
+// task for minifying and concatenating JS files into one file
 
 gulp.task('scripts', function() {
+	return gulp.src(paths.scripts)
+	.pipe(concat('scripts.js'))
+	.pipe(gulp.dest('public/dist/app/javascript'))
+	.pipe(rename('scripts.min.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest('public/dist/app/javascript'));
+})
+
+// task to JShint all the user-written javascript
+
+gulp.task('jshint-scripts', function() {
 	return gulp.src(paths.scripts)
 	.pipe(jshint('.jshintrc'))
 	.pipe(jshint.reporter('jshint-stylish'))
