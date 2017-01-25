@@ -1,6 +1,19 @@
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important; }
 
+body {
+  font-family: 'Roboto', sans-serif; }
+
+ul {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none; }
+  ul li a {
+    text-decoration: none;
+    color: #337ab7; }
+    ul li a:hover {
+      color: #337ab7; }
+
 /* START: homepage view */
 .view {
   margin-top: 50px; }
@@ -8,10 +21,9 @@
 /* END: homepage view */
 /* START: hacw-header */
 hacw-header {
-  font-family: "Roboto";
   font-weight: 400; }
   hacw-header nav.navbar {
-    background: #303F9F;
+    background: #1D1D1D;
     border: none; }
     hacw-header nav.navbar #navbar ul li a {
       color: white; }
@@ -39,15 +51,11 @@ hacw-header {
         text-align: center;
         line-height: 100px; }
   hacw-header .navbar-default .navbar-nav > .open > a, hacw-header .navbar-default .navbar-nav > .open > a:hover, hacw-header .navbar-default .navbar-nav > .open > a:focus {
-    background: #303F9F; }
-  hacw-header .navbar-nav li#brandLogo a {
-    padding: 0px; }
-    hacw-header .navbar-nav li#brandLogo a #logo {
-      padding: 6px;
-      width: 50px; }
+    background: #1D1D1D; }
+  hacw-header .navbar-nav li > img#brandLogo {
+    height: 100px; }
   hacw-header .navbar-nav li#brandName a {
     font-size: 24px;
-    font-family: "Cabin";
     font-weight: 600;
     padding: 14px 20px 14px 20px; }
   hacw-header .navbar-nav li#active a {
@@ -58,7 +66,7 @@ hacw-header {
 /* START: hacw-banner */
 hacw-banner .jumbotron {
   margin-top: 50px;
-  background: #303F9F;
+  background: #1D1D1D;
   padding-left: 15px;
   padding-right: 15px; }
   hacw-banner .jumbotron .container {
@@ -74,9 +82,8 @@ hacw-button button {
   border: 0px;
   border-radius: 2px;
   font-size: 14px;
-  font-family: 'Roboto';
   font-weight: 400;
-  color: #303F9F;
+  color: #1D1D1D;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
   padding: 8px 16px 8px 16px;
   cursor: pointer;
@@ -101,9 +108,8 @@ hacw-button button {
   border: 0px;
   border-radius: 2px;
   font-size: 14px;
-  font-family: 'Roboto';
   font-weight: 400;
-  color: #303F9F;
+  color: #1D1D1D;
   padding: 12px 16px 12px 16px;
   cursor: pointer;
   text-transform: uppercase;
@@ -119,6 +125,39 @@ hacw-button button {
     background: #f5f5f5; }
 
 /* END: flat-button */
+/* START: hacw-footer */
+footer h4 {
+  color: #FFF;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px; }
+
+footer p {
+  color: #CCC;
+  font-size: 14px;
+  line-height: 16px; }
+
+footer ul li {
+  margin-bottom: 5px; }
+  footer ul li a {
+    color: #CCC;
+    -webkit-transition: color 0.2s;
+    -moz-transition: color 0.2s;
+    -o-transition: color 0.2s;
+    -ms-transition: color 0.2s;
+    transition: color 0.2s; }
+    footer ul li a:hover {
+      text-decoration: none;
+      color: #FFF; }
+
+hacw-footer footer {
+  width: 100%;
+  min-height: 350px;
+  background: #1D1D1D; }
+  hacw-footer footer .container {
+    padding-top: 20px; }
+
+/* END: hacw-footer */
 /* hiding */
 .ng-hide-add {
   animation: 0.1s hideIt; }
