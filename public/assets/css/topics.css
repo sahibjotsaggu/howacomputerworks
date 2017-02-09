@@ -19,7 +19,9 @@ h4 {
   padding-left: 19px;
   font-size: 17px;
   font-weight: 400;
-  word-wrap: break-word; }
+  word-wrap: break-word;
+  padding-bottom: 20px;
+  margin-bottom: 0px; }
 
 .lastParagraph {
   margin-bottom: 0px; }

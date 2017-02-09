@@ -19,9 +19,9 @@ ul {
 	list-style-type: none;
 	li a {
 		text-decoration: none;
-		color: #337ab7;
+		color: $mainAccent;
 		&:hover {
-			color: #337ab7;
+			color: $mainAccent;
 		}
 	}
 }
@@ -80,12 +80,12 @@ hacw-header {
 	}
 	.navbar-nav {
 		li > img#brandLogo {
-			height: 100px;
+			height: 50px;
 		}
 		li#brandName a {
 			font-size: 24px;
 			font-weight: 600;
-			padding: 14px 20px 14px 20px;
+			padding: 0px!important;
 		}
 		li#active a {
 			height: $navbarHeight;

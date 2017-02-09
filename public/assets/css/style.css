@@ -10,9 +10,9 @@ ul {
   list-style-type: none; }
   ul li a {
     text-decoration: none;
-    color: #337ab7; }
+    color: #1D1D1D; }
     ul li a:hover {
-      color: #337ab7; }
+      color: #1D1D1D; }
 
 /* START: homepage view */
 .view {
@@ -53,11 +53,11 @@ hacw-header {
   hacw-header .navbar-default .navbar-nav > .open > a, hacw-header .navbar-default .navbar-nav > .open > a:hover, hacw-header .navbar-default .navbar-nav > .open > a:focus {
     background: #1D1D1D; }
   hacw-header .navbar-nav li > img#brandLogo {
-    height: 100px; }
+    height: 50px; }
   hacw-header .navbar-nav li#brandName a {
     font-size: 24px;
     font-weight: 600;
-    padding: 14px 20px 14px 20px; }
+    padding: 0px !important; }
   hacw-header .navbar-nav li#active a {
     height: 50px;
     border-bottom: 3px solid #009688; }

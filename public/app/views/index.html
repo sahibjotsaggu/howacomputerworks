@@ -10,13 +10,14 @@
 	<base href="/">
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/style.css">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,300|Cabin:400,500,600">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,300">
 </head>
 <body ng-app="hacw" ng-controller="MainController as main" ng-cloak="">
 	<hacw-header></hacw-header>
-	
 
 	<div class="view" ui-view></div>
+
+	<hacw-footer></hacw-footer>
 
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
@@ -38,6 +39,7 @@
 	<script src="app/app.directives.js"></script>
 	<script src="app/shared/directives/focus.js"></script>
 	<script src="app/hacw-header/hacw-header.directive.js"></script>
+	<script src="app/hacw-footer/hacw-footer.directive.js"></script>
 	<script src="app/hacw-banner/hacw-banner.directive.js"></script>
 	<script src="app/hacw-button/hacw-button.directive.js"></script>
 	
