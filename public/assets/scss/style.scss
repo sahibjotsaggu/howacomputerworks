@@ -4,13 +4,47 @@
   display: none !important;
 }
 
+@font-face {
+	font-family: 'Source Sans Pro Light';
+	src: url('../fonts/Source Sans Pro/SourceSansPro-Light.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Source Sans Pro';
+	src: url('../fonts/Source Sans Pro/SourceSansPro-Regular.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Source Sans Pro Semibold';
+	src: url('../fonts/Source Sans Pro/SourceSansPro-Semibold.ttf') format('truetype');
+}
+
 $navbarHeight: 50px;
 $bottomRibbon: 3px;
 $mainAccent: #1D1D1D;
 $compAccent: #333333;
 
+/* Media Breakpoints */
+$screen-sm-min: 767px;
+$screen-md-min: 992px;
+$screen-lg-min: 1200;
+
 body {
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+h1 {
+	font-family: 'Source Sans Pro Light';
+}
+
+h4 {
+	font-family: 'Source Sans Pro Semibold';
+}
+
+p {
+	margin: 18px 0px 0px 0px;
+	font-size: 15px;
+	line-height: 30px;
 }
 
 ul {
@@ -41,20 +75,41 @@ hacw-header {
 	nav.navbar {
 		background: $mainAccent;
 		border: none;
+		margin-bottom: 0px;
+		@media screen and (max-width: $screen-sm-min) {
+			min-height: 70px;
+		}
 		#navbar ul li a {
 			color: white;
 		}
+		button.nav-button {
+			margin-top: 0px;
+			height: 70px;
+			display: none;
+			float: right;
+			background: $mainAccent;
+			color: #FFF;
+			@media screen and (max-width: $screen-sm-min) {
+				display: block;
+			}
+		}
 	}
 	.dropdown-menu {
+		background: $mainAccent;
+		color: #FFF;
 		padding: 0px;
 		border: none;
 		box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
 		border-radius: 2px!important;
+		padding-bottom: 10px;
 		li {
 			a {
-				color: black!important;
+				color: white!important;
 				height: 36px;
 				line-height: 32px;
+				&:hover {
+					background: $compAccent;
+				}
 			}
 		}
 	}
@@ -96,6 +151,53 @@ hacw-header {
 
 /* END: hacw-header */
 
+/* START: hacw-mobile-menu */
+
+$mobileMenuWidth: 220px;
+
+hacw-mobile-menu {
+	.mobile-menu {
+		position: fixed;
+		top: 0px;
+		left: 0px;
+		width: $mobileMenuWidth;
+		height: 100%;
+		z-index: 10000;
+		background: $mainAccent;
+		display: none;
+		border-right: 10px solid $compAccent;
+		@include transition(left 0.2s);
+		ul {
+			background: $mainAccent;
+			width: 100%;
+			color: #FFF;
+			border: none;
+			padding: 25px 0px 25px 0px;
+			li {
+				float: left;
+				width: 100%;
+				height: auto;
+				cursor: pointer;
+				padding: 0px 25px 0px 25px;
+				line-height: 32px;
+				&:hover, &.active {
+					background: $compAccent;
+				}
+			}
+		}
+		@media screen and (max-width: $screen-sm-min) {
+			display: block;
+		}
+	}
+	.collapsed {
+		@media screen and (max-width: $screen-sm-min) {
+			left: -$mobileMenuWidth;
+		}
+	}
+}
+
+/* END: hacw-mobile-menu */
+
 /* START: hacw-banner */
 
 $jumbotronHeight: 300px;
@@ -112,6 +214,9 @@ hacw-banner {
 		h1 {
 			font-size: 40px;
 			font-weight: 300;
+		}
+		p {
+			font-size: 18px;
 		}
 	}
 }
@@ -151,7 +256,7 @@ hacw-button {
 
 .flat-button {
 	text-decoration: none;
-	background: #FFF;
+	background: #f5f5f5;
 	border: 0px;
 	border-radius: 2px;
 	font-size: 14px;
@@ -160,13 +265,15 @@ hacw-button {
 	padding: 12px 16px 12px 16px;
 	cursor: pointer;
 	text-transform: uppercase;
+	margin-top: 18px;
 	@include transition(background 0.2s);
 	&:focus {
 		outline: none;
 	}
 	&:hover {
 		text-decoration: none;
-		background: #f5f5f5;
+		background: $mainAccent;
+		color: #FFF;
 	}
 }
 
@@ -183,7 +290,6 @@ footer h4 {
 
 footer p {
 	color: #CCC;
-	font-size: 14px;
 	line-height: 16px;
 }
 
