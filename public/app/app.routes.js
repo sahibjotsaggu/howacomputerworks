@@ -39,6 +39,16 @@ function configure($stateProvider, $urlRouterProvider, $locationProvider) {
 		},
 		controller: 'AboutController',
 		controllerAs: 'about'
+	})
+	.state('login', {
+		url: '/login',
+		templateUrl: 'app/login/login.html',
+		css: {
+			href: '../assets/css/login.css',
+			persist: true
+		},
+		controller: 'LoginController',
+		controllerAs: 'login'
 	});
 
 	// for pretty URL (remove # from URL)
