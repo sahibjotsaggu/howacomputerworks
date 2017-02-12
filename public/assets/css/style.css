@@ -1,6 +1,40 @@
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important; }
 
+@font-face {
+  font-family: 'Source Sans Pro Light';
+  src: url("../fonts/Source Sans Pro/SourceSansPro-Light.ttf") format("truetype"); }
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url("../fonts/Source Sans Pro/SourceSansPro-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: 'Source Sans Pro Semibold';
+  src: url("../fonts/Source Sans Pro/SourceSansPro-Semibold.ttf") format("truetype"); }
+/* Media Breakpoints */
+body {
+  font-family: 'Source Sans Pro', sans-serif; }
+
+h1 {
+  font-family: 'Source Sans Pro Light'; }
+
+h4 {
+  font-family: 'Source Sans Pro Semibold'; }
+
+p {
+  margin: 18px 0px 0px 0px;
+  font-size: 15px;
+  line-height: 30px; }
+
+ul {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none; }
+  ul li a {
+    text-decoration: none;
+    color: #1D1D1D; }
+    ul li a:hover {
+      color: #1D1D1D; }
+
 /* START: homepage view */
 .view {
   margin-top: 50px; }
@@ -8,22 +42,40 @@
 /* END: homepage view */
 /* START: hacw-header */
 hacw-header {
-  font-family: "Roboto";
   font-weight: 400; }
   hacw-header nav.navbar {
-    background: #303F9F;
-    border: none; }
+    background: #1D1D1D;
+    border: none;
+    margin-bottom: 0px; }
+    @media screen and (max-width: 767px) {
+      hacw-header nav.navbar {
+        min-height: 70px; } }
     hacw-header nav.navbar #navbar ul li a {
       color: white; }
+    hacw-header nav.navbar button.nav-button {
+      margin-top: 0px;
+      height: 70px;
+      display: none;
+      float: right;
+      background: #1D1D1D;
+      color: #FFF; }
+      @media screen and (max-width: 767px) {
+        hacw-header nav.navbar button.nav-button {
+          display: block; } }
   hacw-header .dropdown-menu {
+    background: #1D1D1D;
+    color: #FFF;
     padding: 0px;
     border: none;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-    border-radius: 2px !important; }
+    border-radius: 2px !important;
+    padding-bottom: 10px; }
     hacw-header .dropdown-menu li a {
-      color: black !important;
+      color: white !important;
       height: 36px;
       line-height: 32px; }
+      hacw-header .dropdown-menu li a:hover {
+        background: #333333; }
   hacw-header .custom_boxes {
     width: 300px;
     height: 300px; }
@@ -39,26 +91,61 @@ hacw-header {
         text-align: center;
         line-height: 100px; }
   hacw-header .navbar-default .navbar-nav > .open > a, hacw-header .navbar-default .navbar-nav > .open > a:hover, hacw-header .navbar-default .navbar-nav > .open > a:focus {
-    background: #303F9F; }
-  hacw-header .navbar-nav li#brandLogo a {
-    padding: 0px; }
-    hacw-header .navbar-nav li#brandLogo a #logo {
-      padding: 6px;
-      width: 50px; }
+    background: #1D1D1D; }
+  hacw-header .navbar-nav li > img#brandLogo {
+    height: 50px; }
   hacw-header .navbar-nav li#brandName a {
     font-size: 24px;
-    font-family: "Cabin";
     font-weight: 600;
-    padding: 14px 20px 14px 20px; }
+    padding: 0px !important; }
   hacw-header .navbar-nav li#active a {
     height: 50px;
     border-bottom: 3px solid #009688; }
 
 /* END: hacw-header */
+/* START: hacw-mobile-menu */
+hacw-mobile-menu .mobile-menu {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 220px;
+  height: 100%;
+  z-index: 10000;
+  background: #1D1D1D;
+  display: none;
+  border-right: 10px solid #333333;
+  -webkit-transition: left 0.2s;
+  -moz-transition: left 0.2s;
+  -o-transition: left 0.2s;
+  -ms-transition: left 0.2s;
+  transition: left 0.2s; }
+  hacw-mobile-menu .mobile-menu ul {
+    background: #1D1D1D;
+    width: 100%;
+    color: #FFF;
+    border: none;
+    padding: 25px 0px 25px 0px; }
+    hacw-mobile-menu .mobile-menu ul li {
+      float: left;
+      width: 100%;
+      height: auto;
+      cursor: pointer;
+      padding: 0px 25px 0px 25px;
+      line-height: 32px; }
+      hacw-mobile-menu .mobile-menu ul li:hover, hacw-mobile-menu .mobile-menu ul li.active {
+        background: #333333; }
+  @media screen and (max-width: 767px) {
+    hacw-mobile-menu .mobile-menu {
+      display: block; } }
+@media screen and (max-width: 767px) {
+  hacw-mobile-menu .collapsed {
+    left: -220px; } }
+
+/* END: hacw-mobile-menu */
 /* START: hacw-banner */
 hacw-banner .jumbotron {
   margin-top: 50px;
-  background: #303F9F;
+  background: #1D1D1D;
   padding-left: 15px;
   padding-right: 15px; }
   hacw-banner .jumbotron .container {
@@ -66,6 +153,8 @@ hacw-banner .jumbotron {
   hacw-banner .jumbotron h1 {
     font-size: 40px;
     font-weight: 300; }
+  hacw-banner .jumbotron p {
+    font-size: 18px; }
 
 /* END: hacw-banner */
 /* START: hacw-button */
@@ -74,9 +163,8 @@ hacw-button button {
   border: 0px;
   border-radius: 2px;
   font-size: 14px;
-  font-family: 'Roboto';
   font-weight: 400;
-  color: #303F9F;
+  color: #1D1D1D;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
   padding: 8px 16px 8px 16px;
   cursor: pointer;
@@ -97,16 +185,16 @@ hacw-button button {
 /* START: flat-button */
 .flat-button {
   text-decoration: none;
-  background: #FFF;
+  background: #f5f5f5;
   border: 0px;
   border-radius: 2px;
   font-size: 14px;
-  font-family: 'Roboto';
   font-weight: 400;
-  color: #303F9F;
+  color: #1D1D1D;
   padding: 12px 16px 12px 16px;
   cursor: pointer;
   text-transform: uppercase;
+  margin-top: 18px;
   -webkit-transition: background 0.2s;
   -moz-transition: background 0.2s;
   -o-transition: background 0.2s;
@@ -116,9 +204,42 @@ hacw-button button {
     outline: none; }
   .flat-button:hover {
     text-decoration: none;
-    background: #f5f5f5; }
+    background: #1D1D1D;
+    color: #FFF; }
 
 /* END: flat-button */
+/* START: hacw-footer */
+footer h4 {
+  color: #FFF;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px; }
+
+footer p {
+  color: #CCC;
+  line-height: 16px; }
+
+footer ul li {
+  margin-bottom: 5px; }
+  footer ul li a {
+    color: #CCC;
+    -webkit-transition: color 0.2s;
+    -moz-transition: color 0.2s;
+    -o-transition: color 0.2s;
+    -ms-transition: color 0.2s;
+    transition: color 0.2s; }
+    footer ul li a:hover {
+      text-decoration: none;
+      color: #FFF; }
+
+hacw-footer footer {
+  width: 100%;
+  min-height: 350px;
+  background: #1D1D1D; }
+  hacw-footer footer .container {
+    padding-top: 20px; }
+
+/* END: hacw-footer */
 /* hiding */
 .ng-hide-add {
   animation: 0.1s hideIt; }

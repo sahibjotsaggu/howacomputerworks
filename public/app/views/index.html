@@ -4,19 +4,19 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="theme-color" content="#303F9F">
-	<link rel="icon" href="assets/images/EktoLogo-32.png" type="image/png">
+	<link rel="icon" href="assets/images/HACWLogo-32.png" type="image/png">
 	<link rel="icon" sizes="196x196" href="apple-touch-icon.png">
 	<title>How a Computer Works</title>
 	<base href="/">
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/style.css">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,300|Cabin:400,500,600">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,300">
 </head>
 <body ng-app="hacw" ng-controller="MainController as main" ng-cloak="">
 	<hacw-header></hacw-header>
-	
-
 	<div class="view" ui-view></div>
+
+	<hacw-footer></hacw-footer>
 
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
@@ -28,6 +28,8 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-css/1.0.8/angular-css.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui/0.4.0/angular-ui.min.js"></script>
 
+	<script src="https://cdn.auth0.com/js/lock/10.9.1/lock.min.js"></script>
+
 	<script src="assets/javascript/script.js"></script>
 	
 	<script src="app/app.services.js"></script>
@@ -38,14 +40,18 @@
 	<script src="app/app.directives.js"></script>
 	<script src="app/shared/directives/focus.js"></script>
 	<script src="app/hacw-header/hacw-header.directive.js"></script>
+	<script src="app/hacw-mobile-menu/hacw-mobile-menu.directive.js"></script>
+	<script src="app/hacw-footer/hacw-footer.directive.js"></script>
 	<script src="app/hacw-banner/hacw-banner.directive.js"></script>
 	<script src="app/hacw-button/hacw-button.directive.js"></script>
 	
 	<script src="app/app.controllers.js"></script>
 	<script src="app/main.controller.js"></script>
 	<script src="app/hacw-header/hacw-header.controller.js"></script>
+	<script src="app/hacw-mobile-menu/hacw-mobile-menu.controller.js"></script>
 	<script src="app/homepage/homepage.js"></script>
 	<script src="app/about/about.js"></script>
+	<script src="app/login/login.js"></script>
 	<script src="app/topics/topics.controller.js"></script>
 	
 	<script src="app/app.js"></script>
