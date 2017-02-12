@@ -22,3 +22,6 @@ install.sh
 
 # sass-cache
 .sass-cache/
+
+# env file
+.env
