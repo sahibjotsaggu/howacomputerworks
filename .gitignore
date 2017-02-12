@@ -24,4 +24,4 @@ install.sh
 .sass-cache/
 
 # env file
-auth.env
+.env

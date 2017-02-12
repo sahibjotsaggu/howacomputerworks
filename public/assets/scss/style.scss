@@ -1,0 +1,348 @@
+@import "_mixins";
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+@font-face {
+	font-family: 'Source Sans Pro Light';
+	src: url('../fonts/Source Sans Pro/SourceSansPro-Light.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Source Sans Pro';
+	src: url('../fonts/Source Sans Pro/SourceSansPro-Regular.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Source Sans Pro Semibold';
+	src: url('../fonts/Source Sans Pro/SourceSansPro-Semibold.ttf') format('truetype');
+}
+
+$navbarHeight: 50px;
+$bottomRibbon: 3px;
+$mainAccent: #1D1D1D;
+$compAccent: #333333;
+
+/* Media Breakpoints */
+$screen-sm-min: 767px;
+$screen-md-min: 992px;
+$screen-lg-min: 1200;
+
+body {
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+h1 {
+	font-family: 'Source Sans Pro Light';
+}
+
+h4 {
+	font-family: 'Source Sans Pro Semibold';
+}
+
+p {
+	margin: 18px 0px 0px 0px;
+	font-size: 15px;
+	line-height: 30px;
+}
+
+ul {
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+	li a {
+		text-decoration: none;
+		color: $mainAccent;
+		&:hover {
+			color: $mainAccent;
+		}
+	}
+}
+
+/* START: homepage view */
+
+.view {
+	margin-top: $navbarHeight;
+}
+
+/* END: homepage view */
+
+/* START: hacw-header */
+
+hacw-header {
+	font-weight: 400;
+	nav.navbar {
+		background: $mainAccent;
+		border: none;
+		margin-bottom: 0px;
+		@media screen and (max-width: $screen-sm-min) {
+			min-height: 70px;
+		}
+		#navbar ul li a {
+			color: white;
+		}
+		button.nav-button {
+			margin-top: 0px;
+			height: 70px;
+			display: none;
+			float: right;
+			background: $mainAccent;
+			color: #FFF;
+			@media screen and (max-width: $screen-sm-min) {
+				display: block;
+			}
+		}
+	}
+	.dropdown-menu {
+		background: $mainAccent;
+		color: #FFF;
+		padding: 0px;
+		border: none;
+		box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+		border-radius: 2px!important;
+		padding-bottom: 10px;
+		li {
+			a {
+				color: white!important;
+				height: 36px;
+				line-height: 32px;
+				&:hover {
+					background: $compAccent;
+				}
+			}
+		}
+	}
+	.custom_boxes {
+		width: 300px;
+		height: 300px;
+		.grid_list {
+			margin: 0px;
+			padding: 0px;
+			list-style-type: none;
+			li {
+				float: left;
+				width: 100px;
+				height: 100px;
+				background: pink;
+				text-align: center;
+				line-height: 100px;
+			}
+		}
+	}
+	.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus {
+		background: $mainAccent;
+	}
+	.navbar-nav {
+		li > img#brandLogo {
+			height: 50px;
+		}
+		li#brandName a {
+			font-size: 24px;
+			font-weight: 600;
+			padding: 0px!important;
+		}
+		li#active a {
+			height: $navbarHeight;
+			border-bottom: $bottomRibbon solid #009688;
+		}
+	}
+}
+
+/* END: hacw-header */
+
+/* START: hacw-mobile-menu */
+
+$mobileMenuWidth: 220px;
+
+hacw-mobile-menu {
+	.mobile-menu {
+		position: fixed;
+		top: 0px;
+		left: 0px;
+		width: $mobileMenuWidth;
+		height: 100%;
+		z-index: 10000;
+		background: $mainAccent;
+		display: none;
+		border-right: 10px solid $compAccent;
+		@include transition(left 0.2s);
+		ul {
+			background: $mainAccent;
+			width: 100%;
+			color: #FFF;
+			border: none;
+			padding: 25px 0px 25px 0px;
+			li {
+				float: left;
+				width: 100%;
+				height: auto;
+				cursor: pointer;
+				padding: 0px 25px 0px 25px;
+				line-height: 32px;
+				&:hover, &.active {
+					background: $compAccent;
+				}
+			}
+		}
+		@media screen and (max-width: $screen-sm-min) {
+			display: block;
+		}
+	}
+	.collapsed {
+		@media screen and (max-width: $screen-sm-min) {
+			left: -$mobileMenuWidth;
+		}
+	}
+}
+
+/* END: hacw-mobile-menu */
+
+/* START: hacw-banner */
+
+$jumbotronHeight: 300px;
+
+hacw-banner {
+	.jumbotron {
+		margin-top: $navbarHeight;
+		background: $mainAccent;
+		padding-left: 15px;
+		padding-right: 15px;
+		.container {
+			color: #FFF;
+		}
+		h1 {
+			font-size: 40px;
+			font-weight: 300;
+		}
+		p {
+			font-size: 18px;
+		}
+	}
+}
+
+/* END: hacw-banner */
+
+/* START: hacw-button */
+
+hacw-button {
+	button {
+		background: #FFF;
+		border: 0px;
+		border-radius: 2px;
+		font-size: 14px;
+		font-weight: 400;
+		color: $mainAccent;
+		box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+		padding: 8px 16px 8px 16px;
+		cursor: pointer;
+		@include transition(background 0.2s, box-shadow 0.2s);
+		&:focus {
+			outline: none;
+		}
+		&:hover {
+			background: #f5f5f5;
+			box-shadow: 0 4px 7px 0 rgba(0,0,0,.26);
+		}
+		&:active {
+			box-shadow: 0 8px 9px 0 rgba(0,0,0,.26);
+		}
+	}
+}
+
+/* END: hacw-button */
+
+/* START: flat-button */
+
+.flat-button {
+	text-decoration: none;
+	background: #f5f5f5;
+	border: 0px;
+	border-radius: 2px;
+	font-size: 14px;
+	font-weight: 400;
+	color: $mainAccent;
+	padding: 12px 16px 12px 16px;
+	cursor: pointer;
+	text-transform: uppercase;
+	margin-top: 18px;
+	@include transition(background 0.2s);
+	&:focus {
+		outline: none;
+	}
+	&:hover {
+		text-decoration: none;
+		background: $mainAccent;
+		color: #FFF;
+	}
+}
+
+/* END: flat-button */
+
+/* START: hacw-footer */
+
+footer h4 {
+	color: #FFF;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 16px;
+}
+
+footer p {
+	color: #CCC;
+	line-height: 16px;
+}
+
+footer ul li { 
+	margin-bottom: 5px;
+	a {
+		color: #CCC;
+		@include transition(color 0.2s);
+		&:hover {
+			text-decoration: none;
+			color: #FFF;
+		}
+	}
+}
+
+hacw-footer {
+	footer {
+		width: 100%;
+		min-height: 350px;
+		background: $mainAccent;
+		.container {
+			padding-top: 20px;
+		}
+	}
+}
+
+/* END: hacw-footer */
+
+
+/* hiding */
+.ng-hide-add {
+	animation: 0.1s hideIt;
+}
+
+@keyframes hideIt {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+/* showing */
+.ng-hide-remove {
+	animation: 0.5s showIt;
+}
+
+@keyframes showIt {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}

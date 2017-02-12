@@ -23,6 +23,7 @@
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "latest",
     "connect-ensure-login": "^0.1.1",
+    "dotenv": "^4.0.0",
     "express": "latest",
     "mongoose": "latest",
     "morgan": "latest",

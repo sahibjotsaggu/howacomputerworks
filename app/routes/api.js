@@ -1,11 +1,10 @@
 var passport = require('passport');
-var authEnv = require('../../authenv');
 
-module.exports = function(app, express) {
+module.exports = function(express) {
 	var apiRouter = express.Router();
 
 	apiRouter.get('/login', function(req, res) {
-		res.render('login', { env: authEnv });
+		res.render('login', { env: process.env });
 	});
 
 	apiRouter.get('/logout', function(req, res) {
@@ -14,7 +13,7 @@ module.exports = function(app, express) {
 	});
 
 	apiRouter.get('/callback',
-		passport.authenticate('auth0', { failureRedirect: '/404' }),
+		passport.authenticate('auth0', { failureRedirect: '/login' }),
 		function(req, res) {
 			res.redirect(req.session.returnTo || '/user');
 		});

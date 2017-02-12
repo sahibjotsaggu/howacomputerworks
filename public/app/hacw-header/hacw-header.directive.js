@@ -5,7 +5,6 @@
 * @example <hacw-header></hacw-header>
 */
 
-
 appDirectives.directive('hacwHeader', hacwHeader);
 
 function hacwHeader() {

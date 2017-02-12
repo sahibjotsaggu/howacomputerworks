@@ -1,0 +1,6 @@
+<div ng-controller="MobileMenuController as mobilemenu" class="mobile-menu collapsed">
+	<ul>
+		<li class="active" ui-sref="home" ng-click="main.toggleMobileMenu()">Home</li>
+		<li ng-repeat="topic in main.topics" ui-sref="topic({topicName: topic.param})" ng-click="main.toggleMobileMenu()">{{ topic.name }}</li>
+	</ul>
+</div>

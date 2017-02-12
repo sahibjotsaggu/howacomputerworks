@@ -2,27 +2,15 @@
     <nav class="navbar navbar-default navbar-fixed-top">
   		<div class="container">
         	<div class="navbar-header">
-	          	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-	            	<span class="sr-only">Toggle navigation</span>
-	            	<span class="icon-bar"></span>
-	            	<span class="icon-bar"></span>
-	            	<span class="icon-bar"></span>
-	          	</button>
+	          	<button type="button" class="flat-button nav-button" ng-click="main.toggleMobileMenu()">Menu</button>
         	</div>
 	        <div id="navbar" class="navbar-collapse collapse">
 	          	<ul class="nav navbar-nav">
-					<li id="brandName"><a href="/">Logo</a></li>
+					<li id="brandName"><a href="/"><img id="brandLogo" width="50" src="assets/images/minimal-hacw-logo-2.png"></a></li>
 	            	<li class="dropdown">
 	              		<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Topics <span class="caret"></span></a>
 	              		<ul class="dropdown-menu">
 	              			<li ng-repeat="topic in main.topics"><a ui-sref="topic({topicName: topic.param})">{{ topic.name }}</a></li>
-	                		<!--<li role="separator" class="divider"></li>
-	                		<li class="dropdown-header">Nav header</li>-->
-	                		<!--<li class="custom_boxes">
-	                			<ul class="grid_list">
-	                				<li ng-repeat="topic in main.topics">{{ topic.name }}</li>
-	                			</ul>
-	                		</li>-->
 	              		</ul>
 	            	</li>
 	            	<li><a href="about">About</a></li>
