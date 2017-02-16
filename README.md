@@ -2,7 +2,7 @@
 
 Creating an interactive website to teach users about the functionality of different parts of a computer intuitively.
 
-![Image of the current homepage](https://github.com/sahibjotsaggu/howacomputerworks/blob/dev/public/assets/images/homepage.png)
+![Image of the current homepage](https://github.com/sahibjotsaggu/howacomputerworks/blob/readme/public/assets/images/homepage.png)
 
 ### How to run this project
 
